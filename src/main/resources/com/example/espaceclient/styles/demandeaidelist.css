@@ -1,0 +1,32 @@
+/* General Layout */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 15px;
+    -fx-background-color: #e8e7de;
+}
+
+/* Navbar */
+.navbar {
+    -fx-background-color: #013a71;
+    -fx-padding: 20px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+.navbar-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+/* Scroll Pane */
+.demande-aide-scrollpane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.demande-aide-list-container {
+    -fx-padding: 30px;
+    -fx-spacing: 30px;
+    -fx-alignment: center;
+}

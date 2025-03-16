@@ -1,0 +1,122 @@
+/* Root */
+.root {
+    -fx-background-color: #f4f4f9; /* Light gray background */
+}
+
+/* Navbar */
+.navbar {
+    -fx-padding: 15px 20px; /* Consistent padding */
+    -fx-background-color: #265073; /* Dark blue */
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+.navbar-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ECF4D6; /* Light green */
+    -fx-font-weight: bold;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1); /* Subtle text shadow */
+}
+
+/* Profile Picture Section */
+.profile-picture-section {
+    -fx-padding: 30px; /* Increased padding for better spacing */
+    -fx-border-color: #9AD0C2; /* Light teal */
+    -fx-border-radius: 15px; /* More rounded corners */
+    -fx-background-radius: 15px;
+    -fx-background-color: #ffffff; /* White */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+    -fx-alignment: center;
+}
+
+.profile-picture {
+    -fx-border-radius: 50%;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+    -fx-margin: 20px;
+    -fx-border-width: 3px; /* Add a border to the profile picture */
+    -fx-border-color: #9AD0C2; /* Light teal border */
+}
+
+.upload-button {
+    -fx-background-color: #2D9596; /* Teal */
+    -fx-text-fill: #ffffff; /* White */
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-border-radius: 25px; /* Fully rounded corners */
+    -fx-padding: 12px 24px; /* Increased padding for better clickability */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.upload-button:hover {
+    -fx-background-color: #265073; /* Dark blue */
+    -fx-scale-x: 1.05; /* Slight scale effect on hover */
+    -fx-scale-y: 1.05;
+}
+
+/* Main Content */
+.main-content {
+    -fx-padding: 30px; /* Increased padding for better spacing */
+    -fx-spacing: 30px; /* Increased spacing between sections */
+    -fx-alignment: center;
+}
+
+/* Section */
+.section {
+    -fx-padding: 25px; /* Increased padding */
+    -fx-border-color: #9AD0C2; /* Light teal */
+    -fx-border-radius: 15px; /* More rounded corners */
+    -fx-background-radius: 15px;
+    -fx-background-color: #ffffff; /* White */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+    -fx-spacing: 20px; /* Spacing between elements inside the section */
+    -fx-alignment: center;
+}
+
+.section-title {
+    -fx-font-size: 22px; /* Slightly larger for better hierarchy */
+    -fx-text-fill: #265073; /* Dark blue */
+    -fx-font-weight: bold;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1); /* Subtle text shadow */
+}
+
+.info-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333; /* Dark gray */
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 5px 0; /* Spacing between labels */
+}
+
+.edit-button {
+    -fx-background-color: #2D9596; /* Teal */
+    -fx-text-fill: #ffffff; /* White */
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-border-radius: 25px; /* Fully rounded corners */
+    -fx-padding: 12px 24px; /* Increased padding for better clickability */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.edit-button:hover {
+    -fx-background-color: #265073; /* Dark blue */
+    -fx-scale-x: 1.05; /* Slight scale effect on hover */
+    -fx-scale-y: 1.05;
+}
+
+/* Additional Enhancements */
+.info-label:hover {
+    -fx-text-fill: #2D9596; /* Teal on hover for interactivity */
+    -fx-cursor: hand;
+}
+
+/* Subtle Animation for Section */
+.section:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 0, 0); /* Enhanced shadow on hover */
+    -fx-translate-y: -2px; /* Slight lift effect on hover */
+    -fx-transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,60 @@
+/* General Layout */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif; /* Font family */
+    -fx-font-size: 15px; /* Font size */
+    -fx-background-color: #f5f5f5; /* Light background color */
+}
+
+/* Navbar */
+.navbar {
+    -fx-background-color: #013a71; /* Dark blue background */
+    -fx-padding: 15px; /* Padding */
+    -fx-alignment: center; /* Center alignment */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5); /* Shadow effect */
+}
+
+.navbar-title {
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-font-size: 24px; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+}
+
+/* Search and Sort Container */
+.search-sort-container {
+    -fx-padding: 10px; /* Padding */
+    -fx-alignment: center; /* Center alignment */
+}
+
+.search-sort-container TextField {
+    -fx-pref-width: 300px; /* Preferred width for the search field */
+    -fx-padding: 5px; /* Padding inside the search field */
+}
+
+.search-sort-container DatePicker {
+    -fx-pref-width: 150px; /* Preferred width for the date picker */
+    -fx-padding: 5px; /* Padding inside the date picker */
+}
+
+.search-sort-container Button {
+    -fx-background-color: #013a71; /* Dark blue background */
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-padding: 5px 10px; /* Padding */
+    -fx-cursor: hand; /* Hand cursor on hover */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+.search-sort-container Button:hover {
+    -fx-background-color: #014a91; /* Slightly lighter blue background */
+}
+
+/* Scroll Pane */
+.favoris-scrollpane {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-padding: 0; /* No padding */
+}
+
+.favoris-list-container {
+    -fx-padding: 20px; /* Padding inside the container */
+    -fx-spacing: 20px; /* Spacing between elements */
+    -fx-alignment: center; /* Center alignment */
+}

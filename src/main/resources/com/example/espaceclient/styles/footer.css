@@ -1,0 +1,38 @@
+/* Footer */
+.footer {
+    -fx-background-color: linear-gradient(to right, #265073, #2D9596); /* Gradient from Dark Blue to Teal */
+    -fx-padding: 15px 20px;
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+    -fx-border-color: #9AD0C2; /* Light Teal border */
+    -fx-border-width: 1px 0 0 0; /* Top border only */
+}
+
+/* Footer Text */
+.footer-text {
+    -fx-text-fill: #ECF4D6; /* Light Green */
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-weight: bold;
+}
+
+/* Footer Progress Bar */
+.footer-progress {
+    -fx-pref-width: 200px;
+    -fx-accent: #9AD0C2; /* Light Teal */
+    -fx-background-color: #ECF4D6; /* Light Green */
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.footer-progress .track {
+    -fx-background-color: #ECF4D6; /* Light Green */
+    -fx-background-radius: 10px;
+}
+
+.footer-progress .bar {
+    -fx-background-color: #9AD0C2; /* Light Teal */
+    -fx-background-radius: 10px;
+}

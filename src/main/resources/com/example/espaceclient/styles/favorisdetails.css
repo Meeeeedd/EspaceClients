@@ -1,0 +1,17 @@
+/* Details Container */
+.details-container {
+    -fx-padding: 20px; /* Padding inside the container */
+    -fx-spacing: 20px; /* Spacing between elements */
+    -fx-alignment: center; /* Center alignment */
+    -fx-background-color: #ffffff; /* White background for the details view */
+    -fx-border-radius: 15px; /* Rounded corners */
+    -fx-background-radius: 15px; /* Background radius for consistency */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 10, 0); /* Subtle shadow for depth */
+}
+
+/* Favoris Title */
+.favoris-title {
+    -fx-font-size: 20px; /* Font size for the title */
+    -fx-font-weight: bold; /* Bold text for the title */
+    -fx-text-fill: #013a71; /* Dark blue color for the title */
+}

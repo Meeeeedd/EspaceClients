@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@./styles/welcome.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.WelcomeController">
+
+    <!-- Navbar Section -->
+    <VBox alignment="CENTER" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Navbar will be integrated here -->
+    </VBox>
+
+    <!-- Main Content Section -->
+    <ScrollPane fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+        <VBox alignment="CENTER" spacing="20.0">
+            <!-- Welcome Message -->
+            <Label fx:id="welcomeLabel" styleClass="welcome-message" text="Welcome, [Username]!" />
+
+            <!-- Avatar Section -->
+            <ImageView fx:id="avatarImage" fitHeight="120.0" fitWidth="120.0" preserveRatio="true" styleClass="avatar">
+                <image>
+                    <Image url="@./assets/false god.jpg" />
+                </image>
+            </ImageView>
+            <Label styleClass="call-to-action" text="Ready to explore?" />
+
+            <!-- Buttons Section -->
+            <VBox alignment="CENTER" spacing="20.0">
+                <HBox alignment="CENTER" spacing="20.0">
+                    <Button onAction="#showPersonalInfo" styleClass="button-menu" text="Informations personnelles" />
+                    <Button onAction="#showFavorites" styleClass="button-menu" text="Favoris" />
+                    <Button onAction="#showDonations" styleClass="button-menu" text="Don" />
+                    <Button onAction="#showVolunteering" styleClass="button-menu" text="Bénévolat" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="20.0">
+                    <Button onAction="#showHelpRequests" styleClass="button-menu" text="Demande d'aide" />
+                    <Button onAction="#showEvents" styleClass="button-menu" text="Événements" />
+                    <Button onAction="#showExperiences" styleClass="button-menu" text="Expériences" />
+                    <Button onAction="#showSettings" styleClass="button-menu" text="Paramètres" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+
+    <!-- Footer Section -->
+    <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <!-- Footer will be integrated here -->
+    </VBox>
+
+</AnchorPane>

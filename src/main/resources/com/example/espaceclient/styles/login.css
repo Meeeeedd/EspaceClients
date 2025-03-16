@@ -1,0 +1,165 @@
+/* Root */
+.root {
+    -fx-background-color: #f4f4f9; /* Light gray background */
+}
+
+/* Main Container */
+.container {
+    -fx-padding: 40px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+    -fx-background-color: #ffffff; /* White */
+    -fx-border-color: #9AD0C2; /* Light teal */
+    -fx-border-radius: 15px; /* Rounded corners */
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+    -fx-max-width: 600px; /* Responsive max width */
+    -fx-min-width: 300px; /* Responsive min width */
+}
+
+/* Welcome Title */
+.welcome-title {
+    -fx-font-size: 28px; /* Larger for emphasis */
+    -fx-fill: #265073; /* Dark blue */
+    -fx-font-weight: bold;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1); /* Subtle text shadow */
+}
+
+/* Login Title */
+.title {
+    -fx-font-size: 24px; /* Slightly smaller than welcome title */
+    -fx-fill: #265073; /* Dark blue */
+    -fx-font-weight: bold;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1); /* Subtle text shadow */
+}
+
+/* Form Grid */
+.form-grid {
+    -fx-hgap: 15px;
+    -fx-vgap: 15px;
+    -fx-alignment: center;
+}
+
+/* Form Labels */
+.form-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #265073; /* Dark blue */
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Form Fields */
+.form-field {
+    -fx-background-color: #ffffff; /* White */
+    -fx-border-color: #9AD0C2; /* Light teal */
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+    -fx-pref-width: 250px; /* Equal width for all fields */
+}
+
+.form-field:focused {
+    -fx-border-color: #265073; /* Dark blue */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+}
+
+/* Error Text */
+.error-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ff4444; /* Red */
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 5px 0 0 0; /* Spacing above the error message */
+}
+
+/* Toggle Button */
+.toggle-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #265073; /* Dark blue */
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #9AD0C2; /* Light teal */
+    -fx-text-fill: #ffffff; /* White */
+}
+
+/* Checkbox */
+.checkbox {
+    -fx-font-size: 14px;
+    -fx-text-fill: #265073; /* Dark blue */
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: #2D9596; /* Teal */
+    -fx-text-fill: #ffffff; /* White */
+    -fx-font-size: 16px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-border-radius: 25px; /* Fully rounded corners */
+    -fx-padding: 12px 24px; /* Increased padding for better clickability */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+    -fx-pref-width: 250px; /* Equal width for all fields */
+}
+
+.login-button:hover {
+    -fx-background-color: #265073; /* Dark blue */
+    -fx-scale-x: 1.05; /* Slight scale effect on hover */
+    -fx-scale-y: 1.05;
+}
+
+/* Feedback Text */
+.feedback-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2D9596; /* Teal */
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 10px 0 0 0; /* Spacing above the feedback message */
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+    -fx-font-size: 14px;
+    -fx-text-fill: #265073; /* Dark blue */
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.forgot-password-link:hover {
+    -fx-text-fill: #2D9596; /* Teal */
+}
+
+/* Register Text and Link */
+.register-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #265073; /* Dark blue */
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.register-link {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2D9596; /* Teal */
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.register-link:hover {
+    -fx-text-fill: #265073; /* Dark blue */
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    -fx-progress-color: #265073; /* Dark blue */
+    -fx-padding: 10px;
+}

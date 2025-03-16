@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<GridPane fx:id="favorisCard" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.FavorisCardController" stylesheets="@./styles/favoriscard.css" styleClass="favoris-card">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"/>
+    </rowConstraints>
+
+    <!-- Container for the entire card content -->
+    <VBox alignment="CENTER_LEFT" spacing="10.0">
+
+        <!-- Top section with the heart icon -->
+        <HBox alignment="TOP_RIGHT">
+            <ImageView fx:id="heartIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="heart-icon" onMouseClicked="#handleDelete"/>
+        </HBox>
+
+        <!-- Center section with the image -->
+        <HBox alignment="CENTER">
+            <ImageView fx:id="favorisImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" styleClass="favoris-image" onMouseClicked="#showDetails"/>
+        </HBox>
+
+        <!-- Bottom section with the title -->
+        <HBox alignment="CENTER">
+            <Label fx:id="favorisTitle" styleClass="favoris-title"/>
+        </HBox>
+    </VBox>
+</GridPane>

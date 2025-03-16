@@ -1,0 +1,36 @@
+/* Favoris Card */
+.favoris-card {
+    -fx-background-color: #ffffff; /* White background for the card */
+    -fx-padding: 15px; /* Padding inside the card */
+    -fx-border-radius: 15px; /* Rounded corners */
+    -fx-background-radius: 15px; /* Background radius for consistency */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 10, 0); /* Subtle shadow for depth */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+}
+
+.favoris-card:hover {
+    -fx-transform: scale(1.02); /* Slightly enlarge the card on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 15, 0); /* Enhanced shadow on hover */
+}
+
+/* Heart Icon */
+.heart-icon {
+    -fx-cursor: hand; /* Hand cursor on hover */
+}
+
+/* Favoris Image */
+.favoris-image {
+    -fx-border-radius: 15px; /* Rounded corners for the image */
+    -fx-background-radius: 15px; /* Background radius for consistency */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 5, 0); /* Subtle shadow for the image */
+    -fx-cursor: hand; /* Hand cursor on hover */
+}
+
+/* Favoris Title */
+.favoris-title {
+    -fx-font-size: 16px; /* Font size for the title */
+    -fx-font-weight: bold; /* Bold text for the title */
+    -fx-text-fill: #013a71; /* Dark blue color for the title */
+    -fx-padding: 10px 0; /* Padding for spacing */
+    -fx-alignment: center; /* Center alignment */
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@./styles/demandeaidelist.css, @./styles/demandeaidecard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.DemandeAideListController">
+
+    <!-- Navbar Section -->
+    <VBox alignment="CENTER" spacing="10.0" styleClass="navbar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="navbar-title" text="Demande d'Aide History" />
+    </VBox>
+
+    <!-- Main Content Section -->
+    <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="demande-aide-scrollpane" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+        <GridPane fx:id="demandeAideListContainer" alignment="CENTER" hgap="20.0" vgap="20.0" styleClass="demande-aide-list-container">
+            <!-- Demande d'Aide cards will be added here dynamically -->
+        </GridPane>
+    </ScrollPane>
+
+</AnchorPane>

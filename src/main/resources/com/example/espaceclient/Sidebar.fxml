@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Separator?>
+
+<ScrollPane fx:id="sidebarScrollPane" fitToWidth="true" styleClass="sidebar-scrollpane"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.espaceclient.controller.SidebarController"
+            stylesheets="@./styles/sidebar.css">
+    <VBox fx:id="sidebar" styleClass="sidebar">
+        <!-- Toggle Button -->
+        <Button fx:id="toggleSidebarButton" text="☰" onAction="#toggleSidebar" styleClass="sidebar-toggle-button">
+            <tooltip>
+                <Tooltip text="Toggle Sidebar"/>
+            </tooltip>
+        </Button>
+
+        <!-- Navigation Buttons -->
+        <Button text="🏠 Accueil" onAction="#navigateHome" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="Go to Home"/>
+            </tooltip>
+        </Button>
+        <Button text="👤 Profil" onAction="#navigateProfile" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Profile"/>
+            </tooltip>
+        </Button>
+        <Button text="📅 Événements" onAction="#navigateEvennements" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Events"/>
+            </tooltip>
+        </Button>
+        <Button text="🤝 Bénévolats" onAction="#navigateBenevolats" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Volunteering Opportunities"/>
+            </tooltip>
+        </Button>
+        <Button text="💼 Expériences" onAction="#navigateExperiences" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Experiences"/>
+            </tooltip>
+        </Button>
+
+        <!-- Separator -->
+        <Separator style="-fx-padding: 10px 0; -fx-border-color: transparent;"/>
+
+        <Button text="🆘 Demande d'aide" onAction="#navigateDemandeAide" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="Request Help"/>
+            </tooltip>
+        </Button>
+        <Button text="💰 Dons" onAction="#navigateDons" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="Make a Donation"/>
+            </tooltip>
+        </Button>
+        <Button text="💰 Dons2" onAction="#navigateDons2" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="Make a Donation"/>
+            </tooltip>
+        </Button>
+        <Button text="⭐ Favoris" onAction="#navigateFavoris" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Favorites"/>
+            </tooltip>
+        </Button>
+        <Button text="⚙ Paramètres" onAction="#navigateParameters" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="Settings"/>
+            </tooltip>
+        </Button>
+    </VBox>
+</ScrollPane>

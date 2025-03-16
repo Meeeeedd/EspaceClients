@@ -1,0 +1,76 @@
+/* Event Card */
+.event-card {
+    -fx-background-color: #ffffff; /* White background for the card */
+    -fx-padding: 20px; /* Padding inside the card */
+    -fx-border-radius: 15px; /* Rounded corners */
+    -fx-background-radius: 15px; /* Background radius for consistency */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 10, 0); /* Subtle shadow for depth */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+}
+
+.event-card:hover {
+    -fx-transform: scale(1.02); /* Slightly enlarge the card on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 15, 0); /* Enhanced shadow on hover */
+}
+
+/* Event Image */
+.event-image {
+    -fx-border-radius: 15px; /* Rounded corners for the image */
+    -fx-background-radius: 15px; /* Background radius for consistency */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 5, 0); /* Subtle shadow for the image */
+}
+
+/* Event Details */
+.event-details {
+    -fx-padding: 10px 20px; /* Padding around the details section */
+}
+
+/* Event Date Location */
+.event-date-location {
+    -fx-font-size: 16px; /* Font size for date and location */
+    -fx-text-fill: #013a71; /* Dark blue color for text */
+}
+
+/* Event Title */
+.event-title {
+    -fx-font-size: 22px; /* Font size for the title */
+    -fx-font-weight: bold; /* Bold text for the title */
+    -fx-text-fill: #013a71; /* Dark blue color for the title */
+}
+
+/* Event Description */
+.event-description {
+    -fx-font-size: 14px; /* Font size for the description */
+    -fx-text-fill: #7d8c6d; /* Greenish color for the description */
+    -fx-max-width: 300px; /* Maximum width for the description */
+}
+
+/* Attend Button */
+.attend-button {
+    -fx-background-color: #81a8c5; /* Light blue background color */
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-background-radius: 10px; /* Background radius for consistency */
+    -fx-cursor: hand; /* Hand cursor on hover */
+    -fx-font-size: 14px; /* Font size */
+    -fx-pref-width: 100px; /* Preferred width */
+}
+
+.attend-button:hover {
+    -fx-background-color: #7d8c6d; /* Darker greenish color on hover */
+    -fx-opacity: 0.8; /* Slightly transparent on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5); /* Shadow effect on hover */
+}
+
+/* Options Button */
+.options-button {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-text-fill: #81a8c5; /* Light blue color for text */
+    -fx-font-size: 20px; /* Font size */
+    -fx-cursor: hand; /* Hand cursor on hover */
+}
+
+.options-button:hover {
+    -fx-text-fill: #7d8c6d; /* Darker greenish color on hover */
+}

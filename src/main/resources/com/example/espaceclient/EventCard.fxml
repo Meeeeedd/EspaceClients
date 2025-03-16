@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="eventCard" styleClass="event-card" stylesheets="@./styles/eventcard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.EventCardController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+    <!-- Container for the entire card content -->
+    <VBox alignment="CENTER_LEFT" spacing="20.0">
+
+        <!-- Top section with the menu button -->
+        <HBox alignment="TOP_RIGHT">
+            <MenuButton fx:id="optionsButton" styleClass="options-button">
+                <items>
+                    <MenuItem onAction="#handleModifyEvent" text="Modifier" />
+                    <MenuItem onAction="#handleDeleteEvent" text="Supprimer" />
+                </items>
+            </MenuButton>
+        </HBox>
+
+        <!-- Middle section with the image and event details -->
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <ImageView fx:id="eventImage" fitHeight="200.0" fitWidth="200.0" preserveRatio="true" styleClass="event-image" />
+            <VBox alignment="CENTER_LEFT" spacing="10.0" styleClass="event-details">
+                <Label fx:id="eventDateLocation" styleClass="event-date-location" />
+                <Label fx:id="eventTitle" styleClass="event-title" />
+                <Label fx:id="eventDescription" styleClass="event-description" wrapText="true" />
+            </VBox>
+        </HBox>
+
+        <!-- Bottom section with the attend button -->
+        <HBox alignment="BOTTOM_RIGHT">
+            <Button fx:id="attendButton" onAction="#handleAttendEvent" styleClass="attend-button" text="Attend" />
+        </HBox>
+    </VBox>
+
+</GridPane>

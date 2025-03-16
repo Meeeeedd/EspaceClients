@@ -1,0 +1,44 @@
+/* Demande Aide Card */
+.demande-aide-card {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 10, 0);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.demande-aide-card:hover {
+    -fx-transform: scale(1.03);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 15, 0);
+}
+
+/* Demande Title */
+.demande-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #013a71;
+    -fx-padding: 10px 0;
+}
+
+/* Demande Description */
+.demande-description {
+    -fx-font-size: 16px;
+    -fx-text-fill: #555555;
+    -fx-padding: 10px 0;
+}
+
+/* Demande Date */
+.demande-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #888888;
+    -fx-padding: 10px 0;
+}
+
+/* Demande Status */
+.demande-status {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #81a8c5;
+    -fx-padding: 10px 0;
+}

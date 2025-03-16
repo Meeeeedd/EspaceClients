@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="demandeAideCard" styleClass="demande-aide-card" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.DemandeAideCardController">
+    <Label fx:id="demandeTitle" styleClass="demande-title" />
+    <Label fx:id="demandeDescription" styleClass="demande-description" wrapText="true" />
+    <Label fx:id="demandeDate" styleClass="demande-date" />
+    <Label fx:id="demandeStatus" styleClass="demande-status" />
+</VBox>

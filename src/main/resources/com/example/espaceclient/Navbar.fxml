@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+<?import javafx.scene.layout.Region?>
+<HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="100" styleClass="navbar" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.NavbarController"
+      stylesheets="@./styles/navbar.css">
+    <!-- Logo -->
+    <ImageView fx:id="logo" fitHeight="38.0" fitWidth="91.0" preserveRatio="true">
+        <image>
+            <Image url="@../espaceclient/assets/logo.png" />
+        </image>
+    </ImageView>
+
+    <!-- Navbar Title -->
+    <Label fx:id="navbarTitle" styleClass="navbar-title" text="Espace Client" />
+
+    <!-- Spacer -->
+    <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
+
+    <!-- Search Bar -->
+    <TextField fx:id="searchBar" promptText="Rechercher..." styleClass="search-bar" />
+
+    <!-- Notification Button -->
+    <Button fx:id="notificationButton" styleClass="notification-button">
+        <graphic>
+            <StackPane>
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@../espaceclient/assets/notification.png" />
+                    </image>
+                </ImageView>
+                <Circle fill="#ff4444" radius="8" styleClass="notification-badge" />
+            </StackPane>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Notifications" />
+        </tooltip>
+    </Button>
+
+    <!-- Dark Mode Toggle -->
+    <ToggleButton fx:id="darkModeToggle" onAction="#toggleDarkMode" styleClass="dark-mode-toggle" text="🌙" />
+
+    <!-- Profile Menu -->
+    <MenuButton fx:id="profileMenuButton" styleClass="profile-menu" text="Profil" textFill="WHITE">
+        <items>
+            <MenuItem onAction="#navigateProfile" styleClass="menu-item" text="Mon Profil" />
+            <MenuItem onAction="#logout" styleClass="menu-item" text="Déconnexion" />
+        </items>
+    </MenuButton>
+</HBox>

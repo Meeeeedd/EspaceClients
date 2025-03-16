@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+
+<ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.RegisterController">
+    <stylesheets>
+        <URL value="@./styles/register.css" />
+    </stylesheets>
+
+    <!-- Main Container -->
+    <VBox alignment="CENTER" spacing="20" styleClass="root-pane">
+        <!-- Header -->
+        <Label styleClass="header-label" text="Register" />
+
+        <!-- Form Grid -->
+        <GridPane alignment="CENTER" hgap="10" styleClass="form-grid" vgap="10">
+            <!-- Name Field -->
+            <Label styleClass="form-label" text="👤 Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <TextField fx:id="nameField" promptText="Enter your name" styleClass="form-field" />
+                <Text fx:id="nameError" styleClass="error-text" />
+            </VBox>
+
+            <!-- Prenom Field -->
+            <Label styleClass="form-label" text="👤 Prenom:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="prenomField" promptText="Enter your prenom" styleClass="form-field" />
+                <Text fx:id="prenomError" styleClass="error-text" />
+            </VBox>
+
+            <!-- Email Field -->
+            <Label styleClass="form-label" text="✉ Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="emailField" promptText="Enter your email" styleClass="form-field" />
+                <Text fx:id="emailError" styleClass="error-text" />
+            </VBox>
+
+            <!-- Password Field -->
+            <Label styleClass="form-label" text="🔒 Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="form-field" />
+                <TextField fx:id="passwordFieldVisible" managed="false" promptText="Enter your password" styleClass="form-field" visible="false" />
+                <Button fx:id="togglePasswordButton" onAction="#togglePasswordVisibility" text="👁" styleClass="toggle-button" />
+            </HBox>
+            <Text fx:id="passwordError" styleClass="error-text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <!-- Password Strength Bar -->
+            <ProgressBar fx:id="passwordStrengthBar" progress="0.0" styleClass="password-strength-bar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <!-- Confirm Password Field -->
+            <Label styleClass="form-label" text="🔒 Confirm Password:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password" styleClass="form-field" />
+                <TextField fx:id="confirmPasswordFieldVisible" managed="false" promptText="Confirm your password" styleClass="form-field" visible="false" />
+                <Button fx:id="toggleConfirmPasswordButton" onAction="#toggleConfirmPasswordVisibility" text="👁" styleClass="toggle-button" />
+            </HBox>
+            <Text fx:id="confirmPasswordError" styleClass="error-text" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <!-- Telephone Field -->
+            <Label styleClass="form-label" text="☎ Telephone:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                <TextField fx:id="telephoneField" promptText="Enter your telephone" styleClass="form-field" />
+                <Text fx:id="telephoneError" styleClass="error-text" />
+            </VBox>
+
+            <!-- Column and Row Constraints -->
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- Register Button and Loading Indicator -->
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="registerButton" onAction="#handleRegister" styleClass="register-button" text="Register" />
+            <ProgressIndicator fx:id="loadingIndicator" styleClass="loading-indicator" visible="false" />
+        </HBox>
+
+        <!-- Login Link -->
+        <Button fx:id="loginLink" onAction="#navigateToLogin" styleClass="login-link" text="Already have an account? Login" />
+
+        <!-- Feedback Message -->
+        <Text fx:id="feedbackMessage" styleClass="feedback-text" />
+    </VBox>
+</ScrollPane>
