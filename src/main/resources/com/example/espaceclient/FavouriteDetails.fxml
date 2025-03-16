@@ -3,7 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.espaceclient.controller.FavouriteDetailsController" stylesheets="@styles/favourite_details.css">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.espaceclient.controller.FavouriteDetailsController"
+            stylesheets="@styles/favourite_details.css">
     <Label fx:id="detailsLabel" styleClass="details-label" />
     <Button text="Back" onAction="#handleBack" styleClass="back-button" />
-</VBox>
+</AnchorPane>

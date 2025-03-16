@@ -18,9 +18,10 @@ public class Login extends Application {
         primaryStage.setTitle("Login");
         primaryStage.show();
 
-        DonsService donsService = new DonsService();
+        /*DonsService donsService = new DonsService();
         APIContext apiContext = new APIContext("3", "25577542Mine", "sandbox");
         SimpleHttpServer.startServer(donsService, apiContext);
+    */
     }
 
     public static void main(String[] args) {

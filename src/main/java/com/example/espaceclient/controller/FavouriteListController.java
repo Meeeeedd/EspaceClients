@@ -4,10 +4,14 @@ import com.example.espaceclient.model.Favourite;
 import com.example.espaceclient.service.FavouriteService;
 import com.example.espaceclient.utils.SessionManager;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ListCell;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.util.List;
 
 public class FavouriteListController {
@@ -30,12 +34,45 @@ public class FavouriteListController {
                         super.updateItem(favourite, empty);
                         if (empty || favourite == null) {
                             setText(null);
+                            setGraphic(null);
                         } else {
-                            setText(favourite.toString());
+                            try {
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/espaceclient/FavouriteCard.fxml"));
+                                AnchorPane pane = loader.load();
+                                FavouriteCardController controller = loader.getController();
+                                controller.setFavourite(favourite);
+                                controller.setParentController(FavouriteListController.this);
+                                setGraphic(pane);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 };
             }
         });
+    }
+
+    public void removeFavourite(int idFavourite) {
+        favouriteService.removeFavourite(idFavourite);
+        // Refresh the list
+        initialize();
+    }
+
+    public void showFavouriteDetails(Favourite favourite) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/espaceclient/FavouriteDetails.fxml"));
+            AnchorPane pane = loader.load();
+            FavouriteDetailsController controller = loader.getController();
+            controller.setFavourite(favourite);
+            // Assuming you have a method to switch the main content pane
+            switchContent(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void switchContent(Node node) {
+        // Implement this method to switch the content of the main pane
     }
 }

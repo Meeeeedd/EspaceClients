@@ -1,26 +1,33 @@
 package com.example.espaceclient.controller;
 
 import com.example.espaceclient.model.Favourite;
-import com.example.espaceclient.service.FavouriteService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 public class FavouriteCardController {
     @FXML
     private Label favouriteLabel;
 
-    private FavouriteService favouriteService = new FavouriteService();
-
     private Favourite favourite;
+    private FavouriteListController parentController;
 
     public void setFavourite(Favourite favourite) {
         this.favourite = favourite;
-        favouriteLabel.setText(favourite.toString());
+        favouriteLabel.setText(favourite.getTypeEntite() + " - " + favourite.getIdEntite());
+    }
+
+    public void setParentController(FavouriteListController parentController) {
+        this.parentController = parentController;
     }
 
     @FXML
     public void handleRemoveFavourite() {
-        favouriteService.removeFavourite(favourite.getIdFavourite());
-        // Update the UI accordingly
+        parentController.removeFavourite(favourite.getIdFavourite());
+    }
+
+    @FXML
+    public void handleCardClick(MouseEvent event) {
+        parentController.showFavouriteDetails(favourite);
     }
 }
