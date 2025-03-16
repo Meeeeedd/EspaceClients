@@ -72,6 +72,12 @@ public class SidebarController {
         loadScreen("/com/example/espaceclient/FavorisList.fxml");
     }
 
+
+    @FXML
+    private void navigateFavoris2() {
+        loadScreen("/com/example/espaceclient/FavouriteList.fxml");
+    }
+
     @FXML
     private void navigateParameters() {
         loadScreen("/com/example/espaceclient/settings.fxml");
@@ -86,6 +92,7 @@ public class SidebarController {
             e.printStackTrace();
         }
     }
+
 
 
 }

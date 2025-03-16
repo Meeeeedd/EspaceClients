@@ -1,0 +1,12 @@
+.details-label {
+    -fx-font-size: 18px;
+    -fx-padding: 10px;
+}
+
+.back-button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}

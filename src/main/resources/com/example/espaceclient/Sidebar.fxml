@@ -68,6 +68,11 @@
                 <Tooltip text="View Favorites"/>
             </tooltip>
         </Button>
+        <Button text="⭐ Favoris2" onAction="#navigateFavoris2" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Favorites"/>
+            </tooltip>
+        </Button>
         <Button text="⚙ Paramètres" onAction="#navigateParameters" styleClass="sidebar-button">
             <tooltip>
                 <Tooltip text="Settings"/>
