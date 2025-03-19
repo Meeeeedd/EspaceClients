@@ -7,11 +7,6 @@
             fx:controller="com.example.espaceclient.controller.MainController"
             stylesheets="@./styles/main.css">
 
-    <!-- Navbar -->
-    <top>
-        <fx:include source="Navbar.fxml"/>
-    </top>
-
     <!-- Sidebar -->
     <left>
         <fx:include source="Sidebar.fxml"/>

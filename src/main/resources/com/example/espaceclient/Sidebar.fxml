@@ -29,12 +29,7 @@
                 <Tooltip text="View Profile"/>
             </tooltip>
         </Button>
-        <Button text="📅 Événements" onAction="#navigateEvennements" styleClass="sidebar-button">
-            <tooltip>
-                <Tooltip text="View Events"/>
-            </tooltip>
-        </Button>
-        <Button text="📅 Événements 2" onAction="#navigateEvennements2" styleClass="sidebar-button">
+        <Button text="📅 Événements" onAction="#navigateEvennements2" styleClass="sidebar-button">
             <tooltip>
                 <Tooltip text="View Events"/>
             </tooltip>
