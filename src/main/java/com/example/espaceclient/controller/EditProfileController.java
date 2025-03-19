@@ -18,6 +18,7 @@ import com.example.espaceclient.utils.SessionManager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Objects;
 
 public class EditProfileController {
@@ -77,18 +78,18 @@ public class EditProfileController {
     private void handleSaveProfile() {
         Client currentClient = SessionManager.getInstance().getCurrentClient();
         if (currentClient == null) {
-            showFeedback("No client logged in.", "error");
+            showFeedback("Aucun client connecté.", "error");
             return;
         }
 
         // Validate inputs
-        String name = nameField.getText().trim();
-        String prenom = prenomField.getText().trim();
-        String email = emailField.getText().trim();
-        String phone = telephoneField.getText().trim();
-        String adresse = adresseField.getText().trim();
-        String password = passwordField.getText().trim();
-        String confirmPassword = confirmPasswordField.getText().trim();
+        String name = nameField.getText() != null ? nameField.getText().trim() : "";
+        String prenom = prenomField.getText() != null ? prenomField.getText().trim() : "";
+        String email = emailField.getText() != null ? emailField.getText().trim() : "";
+        String phone = telephoneField.getText() != null ? telephoneField.getText().trim() : "";
+        String adresse = adresseField.getText() != null ? adresseField.getText().trim() : "";
+        String password = passwordField.getText() != null ? passwordField.getText().trim() : "";
+        String confirmPassword = confirmPasswordField.getText() != null ? confirmPasswordField.getText().trim() : "";
 
         // Check if any changes were made
         if (name.equals(currentClient.getNom()) &&
@@ -98,33 +99,33 @@ public class EditProfileController {
                 adresse.equals(currentClient.getAdresse()) &&
                 password.isEmpty() && confirmPassword.isEmpty() &&
                 selectedImageFile == null) {
-            showFeedback("No changes were made.", "info");
+            showFeedback("Aucune modification n'a été effectuée.", "info");
             return;
         }
 
         // Validate inputs
         if (!UserValidator.isValidName(name) || !UserValidator.isValidName(prenom)) {
-            showFeedback("Name and surname must be at least 2 characters long.", "error");
+            showFeedback("Le nom et le prénom doivent comporter au moins 2 caractères.", "error");
             return;
         }
 
         if (!UserValidator.isValidEmail(email)) {
-            showFeedback("Invalid email address.", "error");
+            showFeedback("Adresse e-mail invalide.", "error");
             return;
         }
 
         if (!UserValidator.isValidPhoneNumber(phone)) {
-            showFeedback("Phone number must be 8 digits.", "error");
+            showFeedback("Le numéro de téléphone doit comporter 8 chiffres.", "error");
             return;
         }
 
         if (!password.isEmpty() && !UserValidator.isValidPassword(password)) {
-            showFeedback("Password must be at least 8 characters long, with uppercase, lowercase, and a number.", "error");
+            showFeedback("Le mot de passe doit comporter au moins 8 caractères, incluant des majuscules, des minuscules et un chiffre.", "error");
             return;
         }
 
         if (!password.equals(confirmPassword)) {
-            showFeedback("Passwords do not match.", "error");
+            showFeedback("Les mots de passe ne correspondent pas.", "error");
             return;
         }
 
@@ -142,7 +143,7 @@ public class EditProfileController {
         // Save profile image if selected
         if (selectedImageFile != null) {
             String feedbackMessage = UserService.saveProfileImage(currentClient.getIdClient(), selectedImageFile);
-            if (!feedbackMessage.startsWith("Profile image updated successfully")) {
+            if (!feedbackMessage.startsWith("Image de profil mise à jour avec succès")) {
                 showFeedback(feedbackMessage, "error");
                 return;
             }
@@ -150,23 +151,27 @@ public class EditProfileController {
         }
 
         // Save to database and get feedback message
-        String feedbackMessage = UserService.saveUser(currentClient);
-        if (feedbackMessage.startsWith("Profile updated successfully")) {
-            SessionManager.getInstance().setCurrentClient(currentClient);
-            showFeedback(feedbackMessage, "success");
-
-            // Navigate back to Main.fxml and load Profile.fxml
-            navigateToMainAndLoadProfile();
-        } else {
-            showFeedback(feedbackMessage, "error");
+        try {
+            String feedbackMessage = UserService.saveUser(currentClient);
+            if (feedbackMessage.startsWith("Profil mis à jour avec succès")) {
+                SessionManager.getInstance().setCurrentClient(currentClient);
+                showFeedback(feedbackMessage, "success");
+                // Navigate back to Main.fxml and load Profile.fxml
+                navigateToMainAndLoadProfile();
+            } else {
+                showFeedback(feedbackMessage, "error");
+            }
+        } catch (Exception e) {
+            showFeedback("Erreur inattendue lors de la mise à jour du profil.", "error");
+            e.printStackTrace();
         }
     }
 
     @FXML
     private void handleUploadProfilePicture() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Upload Profile Picture");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
+        fileChooser.setTitle("Télécharger une photo de profil");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers image", "*.png", "*.jpg", "*.jpeg"));
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
@@ -180,7 +185,7 @@ public class EditProfileController {
             Image image = new Image(inputStream);
             imageView.setImage(image);
         } catch (IOException e) {
-            showFeedback("Error loading image file.", "error");
+            showFeedback("Erreur lors du chargement du fichier image.", "error");
             e.printStackTrace();
         }
     }
@@ -212,7 +217,7 @@ public class EditProfileController {
             MainController mainController = mainLoader.getController();
             mainController.loadScreen("/com/example/espaceclient/Profile.fxml");
         } catch (IOException e) {
-            showFeedback("Error navigating to the main page.", "error");
+            showFeedback("Erreur lors de la navigation vers la page principale.", "error");
             e.printStackTrace();
         }
     }
@@ -260,13 +265,13 @@ public class EditProfileController {
         // Dynamically set the style based on password strength
         if (strength < 0.4) {
             passwordStrengthBar.setStyle("-fx-accent: #ff4444;"); // Red for weak
-            passwordStrengthLabel.setText("Weak");
+            passwordStrengthLabel.setText("Faible");
         } else if (strength < 0.7) {
             passwordStrengthBar.setStyle("-fx-accent: #ffa500;"); // Orange for medium
-            passwordStrengthLabel.setText("Medium");
+            passwordStrengthLabel.setText("Moyen");
         } else {
             passwordStrengthBar.setStyle("-fx-accent: #2D9596;"); // Teal for strong
-            passwordStrengthLabel.setText("Strong");
+            passwordStrengthLabel.setText("Fort");
         }
     }
 

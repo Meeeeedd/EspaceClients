@@ -34,6 +34,11 @@
                 <Tooltip text="View Events"/>
             </tooltip>
         </Button>
+        <Button text="📅 Événements 2" onAction="#navigateEvennements2" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="View Events"/>
+            </tooltip>
+        </Button>
         <Button text="🤝 Bénévolats" onAction="#navigateBenevolats" styleClass="sidebar-button">
             <tooltip>
                 <Tooltip text="View Volunteering Opportunities"/>
@@ -76,6 +81,11 @@
         <Button text="⚙ Paramètres" onAction="#navigateParameters" styleClass="sidebar-button">
             <tooltip>
                 <Tooltip text="Settings"/>
+            </tooltip>
+        </Button>
+        <Button text="Déconnexion" onAction="#logout" styleClass="sidebar-button">
+            <tooltip>
+                <Tooltip text="Déconnexion"/>
             </tooltip>
         </Button>
     </VBox>

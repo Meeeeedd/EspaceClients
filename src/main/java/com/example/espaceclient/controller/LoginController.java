@@ -66,7 +66,7 @@ public class LoginController {
                         showFeedback(response.getMessage(), Alert.AlertType.INFORMATION);
                         redirectToMainPage();
                     } else {
-                        showFeedback("Failed to retrieve client details.", Alert.AlertType.ERROR);
+                        showFeedback("Échec de la récupération des détails du client.", Alert.AlertType.ERROR);
                     }
                 } else {
                     showFeedback(response.getMessage(), Alert.AlertType.ERROR);
@@ -77,12 +77,12 @@ public class LoginController {
 
     private boolean validateInput(String email, String password) {
         if (!isValidEmail(email)) {
-            emailError.setText("Invalid email. Please enter a valid email address.");
+            emailError.setText("E-mail invalide. Veuillez entrer une adresse e-mail valide.");
             return false;
         }
 
         if (password.isEmpty()) {
-            passwordError.setText("Password cannot be empty.");
+            passwordError.setText("Le mot de passe ne peut pas être vide.");
             return false;
         }
 
@@ -128,7 +128,7 @@ public class LoginController {
 
     @FXML
     private void handleForgotPassword() {
-        showFeedback("Forgot password functionality is not implemented yet.", Alert.AlertType.INFORMATION);
+        showFeedback("La fonctionnalité de mot de passe oublié n'est pas encore implémentée.", Alert.AlertType.INFORMATION);
     }
 
     private void redirectToMainPage() {
@@ -137,10 +137,10 @@ public class LoginController {
             Parent root = loader.load();
             Stage stage = (Stage) emailField.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Main Page");
+            stage.setTitle("Page principale");
             stage.show();
         } catch (IOException e) {
-            showFeedback("Error loading the main page.", Alert.AlertType.ERROR);
+            showFeedback("Erreur de chargement de la page principale.", Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }
@@ -152,10 +152,10 @@ public class LoginController {
             Parent root = loader.load();
             Stage stage = (Stage) emailField.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Register");
+            stage.setTitle("S'inscrire");
             stage.show();
         } catch (IOException e) {
-            showFeedback("Error loading the registration page.", Alert.AlertType.ERROR);
+            showFeedback("Erreur de chargement de la page d'inscription.", Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }

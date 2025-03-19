@@ -1,28 +1,20 @@
 package com.example.espaceclient.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Evenement {
     private int idEvenement;
     private String titre;
     private String description;
-    private Date dateEvenement;
+    private LocalDateTime dateEvenement;
     private String lieu;
     private int idPartenaire;
     private String status;
+    private String imageName;
 
     // Constructors
     public Evenement() {}
-
-    public Evenement(int idEvenement, String titre, String description, Date dateEvenement, String lieu, int idPartenaire, String status) {
-        this.idEvenement = idEvenement;
-        this.titre = titre;
-        this.description = description;
-        this.dateEvenement = dateEvenement;
-        this.lieu = lieu;
-        this.idPartenaire = idPartenaire;
-        this.status = status;
-    }
 
     // Getters and Setters
     public int getIdEvenement() {
@@ -49,11 +41,11 @@ public class Evenement {
         this.description = description;
     }
 
-    public Date getDateEvenement() {
+    public LocalDateTime getDateEvenement() {
         return dateEvenement;
     }
 
-    public void setDateEvenement(Date dateEvenement) {
+    public void setDateEvenement(LocalDateTime dateEvenement) {
         this.dateEvenement = dateEvenement;
     }
 
@@ -81,6 +73,14 @@ public class Evenement {
         this.status = status;
     }
 
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
     // toString method
     @Override
     public String toString() {
@@ -92,6 +92,7 @@ public class Evenement {
                 ", lieu='" + lieu + '\'' +
                 ", idPartenaire=" + idPartenaire +
                 ", status='" + status + '\'' +
+                ", imageName='" + imageName + '\'' +
                 '}';
     }
 }

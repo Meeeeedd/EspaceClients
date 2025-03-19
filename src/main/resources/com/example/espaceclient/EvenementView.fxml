@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@./styles/EvenementView.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.espaceclient.controller.EvennementController">
+
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+
+    <!-- Filter and Search Bar -->
+    <HBox alignment="CENTER" layoutX="18.0" layoutY="14.0" spacing="10">
+        <TextField fx:id="searchField" prefHeight="30" prefWidth="250" promptText="Rechercher..." HBox.hgrow="ALWAYS" />
+        <!-- Search Button -->
+        <Button onAction="#handleSearch" prefHeight="30" prefWidth="40" styleClass="search-button">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <image>
+                        <Image url="@./images/recherche.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <!-- Filter by Date -->
+        <DatePicker fx:id="departureDatePicker" prefHeight="30" prefWidth="250" promptText="Filtrer par date ..." HBox.hgrow="ALWAYS" />
+    </HBox>
+
+    <!-- Separator -->
+    <Separator layoutX="114.0" layoutY="86.0" prefHeight="0.0" prefWidth="372.0" styleClass="separator" />
+
+    <!-- Conteneur pour les cartes d'événements -->
+    <VBox fx:id="cardContainer" layoutX="131.0" layoutY="110.0" spacing="15" styleClass="card-container">
+      <children>
+           <!-- Les cartes d'événements seront ajoutées dynamiquement ici -->
+           <HBox alignment="CENTER_LEFT" spacing="10" styleClass="event-card"> <!-- Espacement de 10px entre l'image et le texte -->
+               <!-- Image de l'événement -->
+               <ImageView fx:id="eventImageView" fitHeight="100" fitWidth="100" /> <!-- ImageView pour afficher l'image de l'événement -->
+
+               <VBox alignment="CENTER_LEFT" spacing="5"> <!-- Espacement de 5px entre les éléments de texte -->
+                   <!-- HBox pour aligner le titre et le MenuButton -->
+                   <HBox alignment="CENTER_LEFT" spacing="10">
+                       <Label styleClass="event-title" text="Titre de l'événement" />
+                   </HBox>
+                   <Label styleClass="event-title" text="Titre de l'événement" />
+                   <Label styleClass="event-description" text="Description de l'événement" wrapText="true" />
+                   <Label styleClass="event-date" text="2025-03-13" />
+                   <Label styleClass="event-lieu" text="Lieu de l'événement" /> <!-- Ajouter le lieu -->
+                   <Label styleClass="event-status" text="Attend" />
+               </VBox>
+               <Region HBox.hgrow="ALWAYS" /> <!-- Espace vide pour pousser le MenuButton à droite -->
+           </HBox>
+      </children>
+    </VBox>
+
+</AnchorPane>

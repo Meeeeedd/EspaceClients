@@ -12,11 +12,6 @@
         <fx:include source="Navbar.fxml"/>
     </top>
 
-    <!-- Footer -->
-    <bottom>
-        <fx:include source="Footer.fxml"/>
-    </bottom>
-
     <!-- Sidebar -->
     <left>
         <fx:include source="Sidebar.fxml"/>

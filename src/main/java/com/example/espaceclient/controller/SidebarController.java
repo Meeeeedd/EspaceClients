@@ -1,10 +1,16 @@
 package com.example.espaceclient.controller;
 
+import com.example.espaceclient.utils.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class SidebarController {
 
@@ -43,6 +49,10 @@ public class SidebarController {
         loadScreen("/com/example/espaceclient/EventList.fxml");
     }
 
+    public void navigateEvennements2() {
+        loadScreen("/com/example/espaceclient/EvenementView.fxml");
+    }
+
     @FXML
     private void navigateBenevolats() {
         loadScreen("/com/example/espaceclient/volunteering.fxml");
@@ -67,11 +77,11 @@ public class SidebarController {
     public void navigateDons2() {
         loadScreen("/com/example/espaceclient/Dons.fxml");
     }
+
     @FXML
     private void navigateFavoris() {
         loadScreen("/com/example/espaceclient/FavorisList.fxml");
     }
-
 
     @FXML
     private void navigateFavoris2() {
@@ -93,6 +103,22 @@ public class SidebarController {
         }
     }
 
+    @FXML
+    private void logout() {
+        SessionManager.getInstance().logout();
+        redirectToLoginPage();
+    }
 
-
+    private void redirectToLoginPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/espaceclient/Login.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) sidebar.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login Page");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

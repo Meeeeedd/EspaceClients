@@ -1,6 +1,6 @@
 /* Sidebar */
 .sidebar {
-    -fx-background-color: linear-gradient(to bottom, #265073, #2D9596); /* Gradient from Dark Blue to Teal */
+    -fx-background-color: #fafaef; /* Main color */
     -fx-padding: 20px;
     -fx-spacing: 15px;
     -fx-alignment: top-center;
@@ -16,8 +16,8 @@
 
 /* Sidebar Buttons */
 .sidebar-button {
-    -fx-background-color: #ECF4D6; /* Light Green */
-    -fx-text-fill: #265073; /* Dark Blue */
+    -fx-background-color: #145d95; /* Other color */
+    -fx-text-fill: #ecefe5; /* Main color */
     -fx-font-size: 14px;
     -fx-font-family: 'Segoe UI', sans-serif;
     -fx-font-weight: bold;
@@ -31,21 +31,21 @@
 }
 
 .sidebar-button:hover {
-    -fx-background-color: #9AD0C2; /* Light Teal */
-    -fx-text-fill: #265073; /* Dark Blue */
+    -fx-background-color: #ffffff; /* Light Gray */
+    -fx-text-fill: #074778; /* Other color */
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
 }
 
 .sidebar-button:pressed {
-    -fx-background-color: #2D9596; /* Teal */
-    -fx-text-fill: #ECF4D6; /* Light Green */
+    -fx-background-color: #5395c6; /* Other color */
+    -fx-text-fill: #ECF4D6; /* Main color */
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
 }
 
 /* Sidebar Toggle Button */
 .sidebar-toggle-button {
-    -fx-background-color: #265073; /* Dark Blue */
-    -fx-text-fill: #ECF4D6; /* Light Green */
+    -fx-background-color: #81a8c5; /* Other color */
+    -fx-text-fill: #ECF4D6; /* Main color */
     -fx-font-size: 18px;
     -fx-font-family: 'Segoe UI', sans-serif;
     -fx-font-weight: bold;
@@ -59,7 +59,7 @@
 }
 
 .sidebar-toggle-button:hover {
-    -fx-background-color: #2D9596; /* Teal */
-    -fx-text-fill: #ECF4D6; /* Light Green */
+    -fx-background-color: #ECF4D6; /* Main color */
+    -fx-text-fill: #81a8c5; /* Other color */
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
 }

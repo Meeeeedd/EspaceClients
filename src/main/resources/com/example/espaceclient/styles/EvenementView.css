@@ -1,0 +1,118 @@
+/* Root styles to define the color scheme */
+.root {
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -fx-background-color: #e8e7de;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+/* Styling for the search button */
+.search-button {
+    -fx-background-color: #013a71;
+    -fx-text-fill: #e8e7de;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.search-button:hover {
+    -fx-background-color: #81a8c5;
+}
+
+/* Styles for the input fields */
+.text-field, .date-picker {
+    -fx-background-color: #e8e7de;
+    -fx-border-color: #81a8c5;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.text-field:focused, .date-picker:focused {
+    -fx-border-color: #013a71;
+}
+
+.text-field {
+    -fx-prompt-text-fill: #7d8c6d;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #e8e7de;
+}
+
+/* Separator styling */
+.separator {
+    -fx-background-color: #013a71;
+    -fx-border-color: #013a71;
+    -fx-pref-height: 2;
+}
+
+/* Event card styles */
+.event-card {
+    -fx-background-color: #81a8c5;
+    -fx-padding: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 5, 0, 0, 1);
+}
+
+.event-card:hover {
+    -fx-background-color: #7d8c6d;
+}
+
+/* Event title */
+.event-title {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #013a71;
+}
+
+/* Event description */
+.event-description {
+    -fx-font-size: 14;
+    -fx-text-fill: #013a71;
+}
+
+/* Event date */
+.event-date {
+    -fx-font-size: 12;
+    -fx-text-fill: #7d8c6d;
+}
+
+/* Event location */
+.event-lieu {
+    -fx-font-size: 12;
+    -fx-text-fill: #7d8c6d;
+}
+
+/* Event status */
+.event-status {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: #013a71;
+}
+
+/* Container for the event cards */
+.card-container {
+    -fx-background-color: #e8e7de;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+
+/* Scroll pane styling */
+.scroll-pane {
+    -fx-background: #e8e7de;
+    -fx-border: none;
+    -fx-padding: 10;
+}
+
+/* Button styling */
+.button {
+    -fx-background-color: #013a71;
+    -fx-text-fill: #e8e7de;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.button:hover {
+    -fx-background-color: #81a8c5;
+}

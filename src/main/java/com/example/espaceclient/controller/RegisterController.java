@@ -87,7 +87,7 @@ public class RegisterController {
             new Thread(() -> performRegistration(name, prenom, email, password, telephone)).start();
         } catch (Exception e) {
             logger.error("Unexpected error in handleRegister: ", e);
-            feedbackMessage.setText("An unexpected error occurred. Please try again later.");
+            feedbackMessage.setText("Une erreur inattendue s'est produite. Veuillez réessayer plus tard.");
         }
     }
 
@@ -99,22 +99,22 @@ public class RegisterController {
             Platform.runLater(() -> {
                 showLoading(false);
                 if (isRegistered) {
-                    feedbackMessage.setText("Registration successful! Redirecting to login page...");
+                    feedbackMessage.setText("Inscription réussie ! Redirection vers la page de connexion...");
                     navigateToLogin();
                 } else {
-                    feedbackMessage.setText("Registration failed. Please try again.");
+                    feedbackMessage.setText("L'inscription a échoué. Veuillez réessayer.");
                 }
             });
         } catch (SQLIntegrityConstraintViolationException e) {
             Platform.runLater(() -> {
                 showLoading(false);
-                feedbackMessage.setText("A user with this email or telephone number already exists.");
+                feedbackMessage.setText("Un utilisateur avec cet e-mail ou ce numéro de téléphone existe déjà.");
             });
             logger.error("Registration error: ", e);
         } catch (Exception e) {
             Platform.runLater(() -> {
                 showLoading(false);
-                feedbackMessage.setText("An unexpected error occurred. Please try again later.");
+                feedbackMessage.setText("Une erreur inattendue s'est produite. Veuillez réessayer plus tard.");
             });
             logger.error("Registration error: ", e);
         }
@@ -139,27 +139,27 @@ public class RegisterController {
         boolean isValid = true;
 
         if (!UserValidator.isValidName(name)) {
-            nameError.setText("Name must be at least 2 characters long and cannot be empty.");
+            nameError.setText("Le nom doit comporter au moins 2 caractères et ne peut pas être vide.");
             isValid = false;
         }
         if (!UserValidator.isValidName(prenom)) {
-            prenomError.setText("Prenom must be at least 2 characters long and cannot be empty.");
+            prenomError.setText("Le prénom doit comporter au moins 2 caractères et ne peut pas être vide.");
             isValid = false;
         }
         if (!UserValidator.isValidEmail(email)) {
-            emailError.setText("Please enter a valid email address (e.g., example@domain.com).");
+            emailError.setText("Veuillez entrer une adresse e-mail valide (ex: exemple@domaine.com).");
             isValid = false;
         }
         if (!UserValidator.isValidPassword(password)) {
-            passwordError.setText("Password must be at least 8 characters long and include uppercase, lowercase, and numbers.");
+            passwordError.setText("Le mot de passe doit comporter au moins 8 caractères et inclure des majuscules, des minuscules et des chiffres.");
             isValid = false;
         }
         if (!password.equals(confirmPassword)) {
-            confirmPasswordError.setText("Passwords do not match.");
+            confirmPasswordError.setText("Les mots de passe ne correspondent pas.");
             isValid = false;
         }
         if (!UserValidator.isValidPhoneNumber(telephone)) {
-            telephoneError.setText("Telephone number must be exactly 8 digits.");
+            telephoneError.setText("Le numéro de téléphone doit comporter exactement 8 chiffres.");
             isValid = false;
         }
 
@@ -231,7 +231,7 @@ public class RegisterController {
             stage.show();
         } catch (IOException e) {
             logger.error("Failed to load login page: ", e);
-            feedbackMessage.setText("Failed to navigate to the login page. Please try again.");
+            feedbackMessage.setText("Échec du chargement de la page de connexion. Veuillez réessayer.");
         }
     }
 
