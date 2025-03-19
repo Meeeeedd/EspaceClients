@@ -44,12 +44,7 @@ public class SidebarController {
         loadScreen("/com/example/espaceclient/profile.fxml");
     }
 
-    @FXML
-    private void navigateEvennements() {
-        loadScreen("/com/example/espaceclient/EventList.fxml");
-    }
-
-    public void navigateEvennements2() {
+    public void navigateEvennements() {
         loadScreen("/com/example/espaceclient/EvenementView.fxml");
     }
 
@@ -70,12 +65,7 @@ public class SidebarController {
 
     @FXML
     private void navigateDons() {
-        loadScreen("/com/example/espaceclient/donations.fxml");
-    }
-
-    @FXML
-    public void navigateDons2() {
-        loadScreen("/com/example/espaceclient/Dons.fxml");
+        loadScreen("/com/example/espaceclient/DonView.fxml");
     }
 
     @FXML

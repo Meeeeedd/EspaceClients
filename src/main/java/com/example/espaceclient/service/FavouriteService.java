@@ -1,12 +1,12 @@
 package com.example.espaceclient.service;
 
-import com.example.espaceclient.dao.FavouriteDAO;
+import com.example.espaceclient.dao.FavouriteDAOImpl;
 import com.example.espaceclient.model.Favourite;
 
 import java.util.List;
 
 public class FavouriteService {
-    private FavouriteDAO favouriteDAO = new FavouriteDAO();
+    private FavouriteDAOImpl favouriteDAO = new FavouriteDAOImpl();
 
     public List<Favourite> getFavouritesByUser(int userId) {
         return favouriteDAO.getFavouritesByUser(userId);

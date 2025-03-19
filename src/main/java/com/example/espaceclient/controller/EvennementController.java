@@ -12,14 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 public class EvennementController {
-    @FXML
-    private DatePicker departureDatePicker;
 
     @FXML
     private TextField searchField;
@@ -27,16 +22,11 @@ public class EvennementController {
     @FXML
     private VBox cardContainer; // Conteneur pour les cartes d'événements
 
-    @FXML
-    private Button addButton; // Bouton "Ajouter"
-
     private EvenementDAOImpl eventDao;
-    private File selectedFile;
 
     @FXML
     public void initialize() {
         eventDao = new EvenementDAOImpl();
-
         // Récupérer l'ID du partenaire actuel depuis la session
         Client currentUser = SessionManager.getInstance().getCurrentClient();
         if (currentUser != null) {
@@ -117,40 +107,6 @@ public class EvennementController {
         String keyword = searchField.getText();
         List<Evenement> evenements = eventDao.searchEvents(keyword);
         afficherEvenements(evenements);
-    }
-
-    private String saveImageToUploads(File sourceFile) throws IOException {
-        String uploadsDir = "uploads";
-        File uploadsDirectory = new File(uploadsDir);
-        if (!uploadsDirectory.exists()) {
-            uploadsDirectory.mkdirs(); // Crée le dossier s'il n'existe pas
-        }
-
-        // Générer un nom de fichier unique pour éviter les conflits
-        String fileName = sourceFile.getName();
-        File destFile = new File(uploadsDirectory, fileName);
-
-        // Copier le fichier dans le dossier uploads
-        Files.copy(sourceFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-        // Retourner uniquement le nom du fichier
-        System.out.println("Image enregistrée: " + fileName); // Ajout d'un message de journalisation
-        return fileName;
-    }
-
-    // Méthode pour afficher une alerte
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    // Méthode pour récupérer l'événement à partir de la carte
-    private Evenement getEventFromCard(HBox eventCard) {
-        // Récupérer l'objet Event associé à la carte via setUserData
-        return (Evenement) eventCard.getUserData();
     }
 
 }

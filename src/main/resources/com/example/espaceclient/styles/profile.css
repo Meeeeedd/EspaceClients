@@ -1,6 +1,7 @@
 /* Root */
 .root {
     -fx-background-color: #f4f4f9; /* Light gray background */
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Navbar */

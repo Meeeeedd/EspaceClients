@@ -1,8 +1,5 @@
 package com.example.espaceclient;
 
-import com.example.espaceclient.service.DonsService;
-import com.example.espaceclient.utils.SimpleHttpServer;
-import com.paypal.base.rest.APIContext;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
